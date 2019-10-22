@@ -289,6 +289,7 @@ public:
 	{
 		bool has_native_half_support = false;
 		bool emulate_depth_compare = false;
+		std::string clamp16_impl;
 	}
 	device_props;
 

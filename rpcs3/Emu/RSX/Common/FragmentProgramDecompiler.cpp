@@ -749,7 +749,15 @@ std::string FragmentProgramDecompiler::BuildCode()
 		OS << Format(precision_func);
 	}
 
-	if (!device_props.has_native_half_support)
+	const std::string clamp16_impl = device_props.has_native_half_support ?
+		getHalfTypeName(4) : device_props.clamp16_impl;
+
+	if (!clamp16_impl.empty())
+	{
+		OS <<
+		"#define clamp16 " << clamp16_impl << "\n";
+	}
+	else
 	{
 		// Accurate float to half clamping (preserves IEEE-754 NaN)
 		std::string clamp_func =
@@ -779,12 +787,6 @@ std::string FragmentProgramDecompiler::BuildCode()
 		"}\n\n";
 
 		OS << Format(clamp_func);
-	}
-	else
-	{
-		// Define raw casts from f32->f16
-		OS <<
-		"#define clamp16(x) " << getHalfTypeName(4) << "(x)\n";
 	}
 
 	OS <<
