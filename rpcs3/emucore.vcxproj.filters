@@ -1579,5 +1579,8 @@
     <ClInclude Include="Emu\Cell\Modules\cellSsl.h">
       <Filter>Emu\Cell\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="Emu\RSX\Common\SPIRVCommon.h">
+      <Filter>Emu\GPU\RSX\Common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

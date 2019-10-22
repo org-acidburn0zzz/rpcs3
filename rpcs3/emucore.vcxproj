@@ -387,6 +387,7 @@
     <ClInclude Include="..\Utilities\address_range.h" />
     <ClInclude Include="Emu\Cell\Modules\cellSsl.h" />
     <ClInclude Include="Emu\Io\Keyboard.h" />
+    <ClInclude Include="Emu\RSX\Common\SPIRVCommon.h" />
     <ClInclude Include="Emu\RSX\Common\texture_cache_helpers.h" />
     <ClInclude Include="util\atomic.hpp" />
     <ClInclude Include="..\Utilities\AtomicPtr.h" />
